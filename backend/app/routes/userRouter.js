@@ -4,7 +4,7 @@ module.exports = app => {
     var router = require("express").Router();
   
     // Retrieve all lessons
-    router.get("/user", users.findAll);
+    router.get("/users", users.findAll);
   
     
   
