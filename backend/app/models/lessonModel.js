@@ -8,7 +8,7 @@ module.exports = mongoose => {
           location: String,
           price: Number,
         },
-        { timestamps: true }
+        { timestamps: false }
       )
     );
   
