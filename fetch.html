@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/vue"></script>
+    <title>Document</title>
+</head>
+<body>
+
+    <main>
+        <div id="app">
+                <div class="container">
+                    <div class="lessons" v-for="product in product">
+                        <ul>
+                            <li><p>{{product.topic}}</p></li>
+                            <li><p>{{product.location}}</p></li>
+                            <li><p>{{product.price}}</p></li>
+                        </ul>
+                    </div>
+                </div>
+        </div>
+    </main>
+
+    <script>
+        let store = new Vue({
+            el:'#app',
+            data: {product: {
+             
+            }},
+            created: function(){
+                fetch('http://localhost:3000/lessons').then(
+                    function (response){
+                        response.json().then(
+                            function(json){
+                                console.log(JSON.stringify(json));
+                                store.product = json;
+                                } 
+                        )
+                    }
+                )
+            }
+        })
+
+        console.log(store.product.topic);
+    </script>
+</body>
+</html>
