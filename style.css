@@ -5,6 +5,9 @@
 }
 
 .lessons{
-    border: 1px solid black;
-    width: 25%;
+    border: 1px solid lightblue;
+    width: 208px; 
+    display: inline-flex;
+    margin: 20px;
 }
+
