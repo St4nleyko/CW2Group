@@ -9,5 +9,7 @@
     width: 208px; 
     display: inline-flex;
     margin: 20px;
+    height: 140px;
+    align-items: center;
 }
 
